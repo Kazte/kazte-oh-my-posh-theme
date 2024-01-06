@@ -1,0 +1,164 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "white": "#f7f7f7",
+    "black": "#111111"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "p:white",
+          "style": "plain",
+          "template": "\u250c",
+          "type": "text"
+        },
+        {
+          "background": "#464646",
+          "foreground": "p:white",
+          "properties": {
+            "windows": "\ue62a",
+            "linux": "\uf17c",
+            "ubuntu": "\uf31b",
+            "macos": "\uf179"
+          },
+          "style": "plain",
+          "template": " {{.Icon}}{{if .WSL}} (WSL){{end}}\u2800",
+          "type": "os"
+        },
+        {
+          "background": "#ffe093",
+          "foreground": "p:black",
+          "style": "plain",
+          "template": " \uf2c0 {{.HostName}}\ue0bd{{.UserName}}\u2800",
+          "type": "session"
+        },
+        {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "powerline",
+          "template": " {{ .UpstreamIcon }} {{ .HEAD }} {{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }} {{ end }} ",
+          "type": "git"
+        },
+        {
+          "type": "sysinfo",
+          "foreground": "#ffffff",
+          "background": "#8f43f3",
+          "template": "  {{ round .PhysicalPercentUsed .Precision }}% ",
+          "properties": {
+            "precision": 2
+          },
+          "style": "powerline"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "#b3ffde",
+          "properties": {
+            "time_format": "02/01/06 15:04"
+          },
+          "style": "plain",
+          "template": "<#93d0ff>[</>{{.CurrentDate | date .Format}}",
+          "type": "time"
+        },
+        {
+          "background": "transparent",
+          "foreground": "p:white",
+          "style": "plain",
+          "template": "<#93d0ff>]</>\u2510",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "p:white",
+          "properties": {
+            "folder_icon": "\uf07b",
+            "folder_separator_template": "<#93d0ff> \u00bb </>",
+            "home_icon": "\ueb06",
+            "style": "agnoster"
+          },
+          "style": "plain",
+          "template": "<p:white>\u2514</><#93d0ff>[</> {{.Path}} <#93d0ff>]</>",
+          "type": "path"
+        },
+        {
+          "type": "spotify",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "background": "transparent",
+          "foreground": "#1BD760",
+          "properties": {
+            "playing_icon": " ",
+            "paused_icon": " ",
+            "stopped_icon": " "
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "#b3ffde",
+          "properties": {
+            "style": "austin",
+            "threshold": 0
+          },
+          "style": "plain",
+          "template": "<#93d0ff>[</>{{.FormattedMs}}<#93d0ff>]</>",
+          "type": "executiontime"
+        },
+        {
+          "background": "transparent",
+          "foreground": "p:white",
+          "style": "plain",
+          "template": "\u2518",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "#b3ffde",
+          "foreground_templates": ["{{if gt .Code 0}}#ff3030{{end}}"],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": ">",
+          "type": "status"
+        }
+      ]
+    }
+  ],
+  "console_title_template": "{{.Folder}}",
+  "final_space": true,
+  "version": 2
+}
