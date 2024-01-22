@@ -214,13 +214,12 @@
         {
           "type": "spotify",
           "style": "powerline",
-          "powerline_symbol": "",
           "background": "transparent",
           "foreground": "#1BD760",
           "properties": {
-            "playing_icon": " ",
-            "paused_icon": " ",
-            "stopped_icon": " "
+            "playing_icon": "  ",
+            "paused_icon": " ⏸︎ ",
+            "stopped_icon": "  "
           }
         }
       ]
